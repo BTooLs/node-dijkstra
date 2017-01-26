@@ -1,3 +1,4 @@
+"use strict";
 const Queue = require('./PriorityQueue');
 const removeDeepFromMap = require('./removeDeepFromMap');
 const toDeepMap = require('./toDeepMap');
@@ -127,7 +128,7 @@ class Graph {
    * //       cost: 4
    * //    }
    */
-  path(start, goal, options = {}) {
+  path(start, goal, options) {
     // Don't run when we don't have nodes set
     if (!this.graph.size) {
       if (options.cost) return { path: null, cost: 0 };
@@ -228,13 +229,6 @@ class Graph {
     }
 
     return path;
-  }
-
-  /**
-   * @deprecated since version 2.0, use `Graph#path` isntead
-   */
-  shortestPath(...args) {
-    return this.path(...args);
   }
 
 }

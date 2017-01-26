@@ -9,7 +9,8 @@
 function removeDeepFromMap(map, key) {
   const newMap = new Map();
 
-  for (const [aKey, val] of map) {
+  for (const aKey of Object.keys(map)) {
+    const val = map[aKey];
     if (aKey !== key && val instanceof Map) {
       newMap.set(aKey, removeDeepFromMap(val, key));
     } else if (aKey !== key) {

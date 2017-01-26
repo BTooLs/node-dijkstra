@@ -1,3 +1,4 @@
+'use strict';
 /**
  * This very basic implementation of a priority queue is used to select the
  * next node of the graph to walk to.
